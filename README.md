@@ -15,8 +15,3 @@ This project implements a hybrid approach for age estimation by combining **Geom
 ## 🛠️ Implementation Details
 - **GLCM Parameters:** Angles (0°, 45°, 90°, 135°) with reduced gray levels (16 levels) for computational efficiency.
 - **Kernel:** RBF (Radial Basis Function) for SVR to handle non-linear age-related facial transformations.
-
-## 💻 Tech Stack
-- Python (Scikit-learn, Scikit-image)
-- OpenCV (for Viola-Jones implementation)
-- Matplotlib (for analytical plots)
