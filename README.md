@@ -1,17 +1,21 @@
-# Age Prediction based on Facial Landmarks and Texture Features
+# Facial Age Estimation on FG-NET Dataset
 
-This project implements a hybrid approach for age estimation by combining **Geometric (Facial Landmarks)** and **Texture (GLCM)** features using Support Vector Regression (SVR).
+This project implements a robust age estimation pipeline by combining geometric and texture features. It migrates legacy MATLAB methodologies into a modern Python-based workflow.
 
-## 📌 Key Methodology
-1. **Facial Landmarks:** Locating 68 specific feature points (eyes, nose, mouth, jawline) to capture morphological changes in the face over time.
-2. **Texture Analysis (GLCM):** Using the Gray-Level Co-occurrence Matrix to extract spatial gray-level dependence, capturing skin texture and wrinkle patterns.
-3. **Face Detection:** Based on the classic **Viola-Jones** algorithm (Haar features).
-4. **Regression:** Implementing **SVM Regression** to map the high-dimensional feature vector to a continuous age value.
+## 🚀 Key Methodologies
+- **Face Detection:** Viola-Jones equivalent using `dlib` frontal face detector.
+- **Landmark Detection:** Chehra-style 68-point facial landmark extraction for geometric features.
+- **Texture Analysis:** Gray-Level Co-occurrence Matrix (GLCM) to extract skin texture descriptors (Contrast, Homogeneity, Energy, Correlation).
+- **Regression Model:** Support Vector Regression (SVR) with an RBF kernel for final age prediction.
 
-## 🚀 Research Findings
-- **Landmarks vs. Texture:** Morphology (landmarks) generally reflects age better than simple texture.
-- **Hybrid Performance:** Combining both feature sets significantly improves prediction accuracy compared to using either alone.
+## 📊 Performance
+- **Dataset:** FG-NET Aging Database
+- **Successfully Processed:** 979 images
+- **Mean Absolute Error (MAE):** 5.99 years
+- **R2 Score:** 0.54
 
-## 🛠️ Implementation Details
-- **GLCM Parameters:** Angles (0°, 45°, 90°, 135°) with reduced gray levels (16 levels) for computational efficiency.
-- **Kernel:** RBF (Radial Basis Function) for SVR to handle non-linear age-related facial transformations.
+## 🛠️ How to Run
+1. Open the `.ipynb` file in Google Colab.
+2. The code automatically downloads the FG-NET dataset using `kagglehub`.
+3. Ensure the `shape_predictor_68_face_landmarks.dat` is downloaded (automated in script).
+4. Run all cells to see the results and performance plots.
